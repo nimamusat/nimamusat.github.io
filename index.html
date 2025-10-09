@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İyi ki Doğdun Güzel Kardeşim 🎉</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ffb6c1, #ff69b4, #ff1493);
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            flex-direction: column;
+            color: white;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 300;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        img {
+            width: 250px;
+            height: auto;
+            border-radius: 20px;
+            margin-top: 20px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+            animation: pop 2s ease-in-out;
+        }
+
+        .hearts {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .heart {
+            position: absolute;
+            bottom: -10px;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            clip-path: polygon(50% 0%, 61% 19%, 80% 25%, 90% 44%, 88% 65%, 74% 85%, 50% 100%, 26% 85%, 12% 65%, 10% 44%, 20% 25%, 39% 19%);
+            animation: float 5s linear infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pop {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <h1>🎉 İyi ki Doğdun Güzel Kardeşim 🎂</h1>
+    <h2>Bu özel gün senin kadar parlak ve güzel olsun 💖</h2>
+    <img src="hzl.jpg" alt="Doğum günü fotoğrafı">
+
+    <div class="hearts"></div>
+
+    <script>
+        const heartsContainer = document.querySelector('.hearts');
+
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (3 + Math.random() * 2) + 's';
+            heartsContainer.appendChild(heart);
+            setTimeout(() => heart.remove(), 5000);
+        }
+
+        setInterval(createHeart, 200);
+    </script>
+</body>
+</html>
