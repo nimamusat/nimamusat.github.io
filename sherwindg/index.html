@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Happy Birthday Brother 🎉</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="hearts-container"></div>
+
+<section class="hero">
+    <h1 class="title">HAPPY BIRTHDAY 🎉</h1>
+    <p class="subtitle">Today is all about you, my brother 💙</p>
+    <button onclick="openSurprise()">Open Your Surprise 🎁</button>
+</section>
+
+<section class="surprise hidden" id="surprise">
+    <div class="card">
+        <img src="sherwin.jpeg" alt="Birthday Photo">
+        <h2>Happy Birthday My Brother 🎂</h2>
+        <p class="message">
+            I’m so grateful to have you in my life. <br><br>
+            Thank you for your loyalty, your laughter, and your big heart.
+            No matter where life takes us, you’ll always be my brother. <br><br>
+            I love you so much and I wish you endless happiness, success,
+            and everything your heart desires. <br><br>
+            Stay strong, stay amazing, and never stop being you. 💙
+        </p>
+
+        <!-- 🎂 CAKE SECTION -->
+        <div class="cake-section">
+            <h2>Make a Wish 🎂</h2>
+
+            <div class="cake">
+                <div class="candles">
+                    <div class="candle"><div class="flame"></div></div>
+                    <div class="candle"><div class="flame"></div></div>
+                    <div class="candle"><div class="flame"></div></div>
+                    <div class="candle"><div class="flame"></div></div>
+                    <div class="candle"><div class="flame"></div></div>
+                </div>
+                <div class="cake-body"></div>
+            </div>
+
+            <button onclick="blowCandles()">Blow the Candles 💨</button>
+
+            <p id="wishMessage" class="hidden wish-text">
+                🎉 Your wish is on its way! Happy Birthday Brother! 💙
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>

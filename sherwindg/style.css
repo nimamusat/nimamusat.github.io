@@ -1,0 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    font-size: 4rem;
+    animation: glow 2s infinite alternate;
+}
+
+.subtitle {
+    font-size: 1.4rem;
+    margin: 20px 0;
+}
+
+button {
+    padding: 15px 35px;
+    font-size: 18px;
+    border: none;
+    border-radius: 40px;
+    background: white;
+    color: #764ba2;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 20px;
+}
+
+button:hover {
+    transform: scale(1.1);
+    background: #ff4d88;
+    color: white;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px white; }
+    to { text-shadow: 0 0 30px #ff80ff; }
+}
+
+/* SURPRISE SECTION */
+.surprise {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+}
+
+.card {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(15px);
+    padding: 40px;
+    border-radius: 25px;
+    max-width: 600px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.card img {
+    width: 250px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.message {
+    margin: 20px 0;
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 🎂 CAKE */
+.cake-section {
+    margin-top: 40px;
+}
+
+.cake {
+    position: relative;
+    width: 200px;
+    margin: 40px auto;
+}
+
+.cake-body {
+    width: 200px;
+    height: 100px;
+    background: #ffb6c1;
+    border-radius: 0 0 20px 20px;
+}
+
+.candles {
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    top: -40px;
+    width: 100%;
+}
+
+.candle {
+    width: 10px;
+    height: 40px;
+    background: white;
+    position: relative;
+    border-radius: 3px;
+}
+
+.flame {
+    width: 12px;
+    height: 20px;
+    background: orange;
+    border-radius: 50%;
+    position: absolute;
+    top: -20px;
+    left: -1px;
+    animation: flicker 0.2s infinite alternate;
+}
+
+@keyframes flicker {
+    from { transform: scale(1); opacity: 1; }
+    to { transform: scale(1.2); opacity: 0.8; }
+}
+
+.wish-text {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Floating Hearts */
+.hearts-container span {
+    position: fixed;
+    bottom: -50px;
+    font-size: 20px;
+    animation: floatUp 10s linear infinite;
+}
+
+@keyframes floatUp {
+    from { transform: translateY(0); opacity: 1; }
+    to { transform: translateY(-120vh); opacity: 0; }
+}
