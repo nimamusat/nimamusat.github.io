@@ -1,168 +1,376 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Özür Dilerim</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Özür Dilerim Aşkım</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-    *{
-        box-sizing: border-box;
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    overflow-x:hidden;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+    padding:20px;
+    background:
+    linear-gradient(135deg,#fff6f8,#ffe9f0,#fffdf7);
+    overflow:hidden;
+}
+
+/* Blur Arka Plan */
+.bg1,
+.bg2{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(120px);
+    z-index:0;
+}
+
+.bg1{
+    width:350px;
+    height:350px;
+    background:#ffc8da;
+    top:-100px;
+    left:-100px;
+}
+
+.bg2{
+    width:350px;
+    height:350px;
+    background:#fff0b8;
+    bottom:-120px;
+    right:-100px;
+}
+
+/* Zambaklar */
+.lily{
+    position:absolute;
+    top:-80px;
+    font-size:clamp(24px,3vw,42px);
+    animation:fall linear infinite;
+    z-index:1;
+    opacity:.9;
+    pointer-events:none;
+}
+
+@keyframes fall{
+    0%{
+        transform:translateY(-100px) rotate(0deg);
     }
+    100%{
+        transform:translateY(120vh) rotate(360deg);
+    }
+}
+
+/* Kart */
+.card{
+    position:relative;
+    z-index:5;
+    width:100%;
+    max-width:850px;
+    background:rgba(255,255,255,.82);
+    backdrop-filter:blur(12px);
+    border:1px solid rgba(255,255,255,.5);
+    border-radius:35px;
+    padding:60px;
+    text-align:center;
+    box-shadow:0 15px 50px rgba(0,0,0,.12);
+}
+
+/* Başlık */
+h1{
+    font-size:clamp(2.3rem,6vw,5rem);
+    color:#ff4f87;
+    margin-bottom:18px;
+    line-height:1.1;
+}
+
+.subtitle{
+    font-size:clamp(1rem,2vw,1.2rem);
+    color:#888;
+    margin-bottom:35px;
+}
+
+/* Yazılar */
+.text{
+    font-size:clamp(1rem,2vw,1.35rem);
+    line-height:2;
+    color:#555;
+    margin-bottom:45px;
+}
+
+.highlight{
+    color:#ff4f87;
+    font-weight:600;
+}
+
+/* Butonlar */
+.buttons{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+    min-height:80px;
+    position:relative;
+}
+
+button{
+    border:none;
+    cursor:pointer;
+    border-radius:60px;
+    padding:18px 35px;
+    font-size:1.05rem;
+    font-weight:600;
+    transition:.25s;
+    font-family:'Poppins',sans-serif;
+}
+
+#yesBtn{
+    background:linear-gradient(135deg,#ff4f87,#ff7aa8);
+    color:white;
+    box-shadow:0 8px 25px rgba(255,79,135,.35);
+}
+
+#yesBtn:hover{
+    transform:scale(1.08);
+}
+
+#noBtn{
+    background:white;
+    color:#666;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+/* Mesaj */
+.success{
+    margin-top:40px;
+    display:none;
+    animation:pop .8s ease;
+}
+
+.success h2{
+    color:#ff4f87;
+    font-size:clamp(1.8rem,4vw,3rem);
+    margin-bottom:10px;
+}
+
+.success p{
+    color:#666;
+    font-size:1.1rem;
+}
+
+@keyframes pop{
+    0%{
+        opacity:0;
+        transform:scale(.5);
+    }
+    100%{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+/* Kalpler */
+.heart{
+    position:fixed;
+    font-size:24px;
+    animation:heartFly 4s linear forwards;
+    z-index:999;
+    pointer-events:none;
+}
+
+@keyframes heartFly{
+    0%{
+        transform:translateY(0) scale(1);
+        opacity:1;
+    }
+    100%{
+        transform:translateY(-900px) scale(2);
+        opacity:0;
+    }
+}
+
+/* TABLET */
+@media(max-width:900px){
+
+    .card{
+        padding:45px 30px;
+    }
+
+    .text{
+        line-height:1.9;
+    }
+}
+
+/* TELEFON */
+@media(max-width:600px){
 
     body{
-        margin:0;
-        padding:0;
-        font-family: Arial, sans-serif;
-        background: linear-gradient(135deg, #ffd6e7, #ffeaa7);
-        display:flex;
-        justify-content:center;
+        padding:15px;
         align-items:center;
-        height:100vh;
-        text-align:center;
-        overflow:hidden;
     }
 
-    .container{
-        width:90%;
-        max-width:400px;
-        background:white;
-        padding:25px;
-        border-radius:20px;
-        box-shadow:0 10px 25px rgba(0,0,0,0.15);
-        position:relative;
-        z-index:2;
-    }
-
-    h1{
-        font-size:22px;
-        margin-bottom:10px;
-    }
-
-    p{
-        font-size:18px;
-        margin-bottom:15px;
-    }
-
-    .donkey{
-        font-size:60px;
-        margin-bottom:10px;
+    .card{
+        padding:35px 22px;
+        border-radius:28px;
     }
 
     .buttons{
-        margin-top:15px;
-        position:relative;
-        height:120px;
+        flex-direction:column;
     }
 
     button{
-        padding:12px 20px;
-        border:none;
-        border-radius:30px;
-        font-size:16px;
-        cursor:pointer;
-        transition:0.3s;
-        position:absolute;
+        width:100%;
+        max-width:280px;
+        padding:16px 20px;
     }
 
-    #yesBtn{
-        background:#55efc4;
-        left:20%;
+    .text br{
+        display:none;
     }
 
-    #noBtn{
-        background:#ff7675;
-        right:20%;
+    .text{
+        line-height:1.8;
     }
+}
 
-    #message{
-        margin-top:20px;
-        font-size:20px;
-        color:#d63031;
-        font-weight:bold;
-    }
-
-    .flower{
-        position:absolute;
-        font-size:24px;
-        animation: fall 4s linear forwards;
-        z-index:1;
-    }
-
-    @keyframes fall{
-        0%{
-            transform: translateY(-50px) rotate(0deg);
-            opacity:1;
-        }
-        100%{
-            transform: translateY(100vh) rotate(360deg);
-            opacity:0;
-        }
-    }
-
-    @media(max-width:400px){
-        h1{
-            font-size:18px;
-        }
-        p{
-            font-size:16px;
-        }
-    }
 </style>
 </head>
 
 <body>
 
-<div class="container">
-    <div class="donkey">🫏</div>
-    <h1>Özür dilerim, affet...</h1>
-    <p>Eşeğini affet 🥺</p>
+<div class="bg1"></div>
+<div class="bg2"></div>
 
-    <div class="buttons">
-        <button id="yesBtn">Affettim</button>
-        <button id="noBtn">Affetmedim</button>
+<!-- Zambaklar -->
+<div class="lily" style="left:5%; animation-duration:10s;">🤍</div>
+<div class="lily" style="left:15%; animation-duration:12s;">🌸</div>
+<div class="lily" style="left:28%; animation-duration:8s;">🤍</div>
+<div class="lily" style="left:40%; animation-duration:11s;">🌸</div>
+<div class="lily" style="left:55%; animation-duration:9s;">🤍</div>
+<div class="lily" style="left:68%; animation-duration:13s;">🌸</div>
+<div class="lily" style="left:82%; animation-duration:10s;">🤍</div>
+<div class="lily" style="left:92%; animation-duration:12s;">🌸</div>
+
+<div class="card">
+
+    <h1>Özür Dilerim 🤍</h1>
+
+    <div class="subtitle">
+        Çünkü sen benim için her şeyden değerlisin...
     </div>
 
-    <div id="message"></div>
+    <div class="text">
+
+        Aşkım... Seni kırdığım için gerçekten çok üzgünüm.  
+        Kalbini üzmek istediğim son kişi sensin... 🌸
+
+        <br><br>
+
+        Sen hayatımdaki en güzel şeysin.  
+        Gülüşün dünyamı güzelleştiriyor, sesin içimi huzurla dolduruyor.
+
+        <br><br>
+
+        <span class="highlight">
+            Seni çok seviyorum ve seni kaybetmek istemiyorum...
+        </span>
+
+        <br><br>
+
+        Tıpkı sevdiğin zambaklar gibi,
+        sana olan sevgim saf, temiz ve sonsuz 🤍
+
+    </div>
+
+    <div class="buttons">
+        <button id="yesBtn">Affettim ❤️</button>
+        <button id="noBtn">Affetmedim 😒</button>
+    </div>
+
+    <div class="success" id="success">
+        <h2>SENİ ÇOK SEVİYORUM ❤️</h2>
+        <p>
+            Dünyanın en güzel insanı sensin 🌸🤍
+        </p>
+    </div>
+
 </div>
 
 <script>
-    const noBtn = document.getElementById("noBtn");
-    const yesBtn = document.getElementById("yesBtn");
-    const message = document.getElementById("message");
 
-    noBtn.addEventListener("click", function(){
-        const container = document.querySelector(".buttons");
-        const maxX = container.clientWidth - noBtn.offsetWidth;
-        const maxY = container.clientHeight - noBtn.offsetHeight;
+/* Affetmedim butonu kaçsın */
+const noBtn = document.getElementById("noBtn");
 
-        const randomX = Math.random() * maxX;
-        const randomY = Math.random() * maxY;
+function moveButton(){
 
-        noBtn.style.left = randomX + "px";
-        noBtn.style.top = randomY + "px";
-    });
+    const maxX = window.innerWidth - noBtn.offsetWidth - 20;
+    const maxY = window.innerHeight - noBtn.offsetHeight - 20;
 
-    yesBtn.addEventListener("click", function(){
-        message.innerHTML = "Seni çok seviyorum ❤️";
+    const x = Math.random() * maxX;
+    const y = Math.random() * maxY;
 
-        // papatya efekti
-        for(let i = 0; i < 30; i++){
-            let flower = document.createElement("div");
-            flower.classList.add("flower");
-            flower.innerHTML = "🌼";
+    noBtn.style.position = "fixed";
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+}
 
-            flower.style.left = Math.random() * 100 + "vw";
-            flower.style.animationDuration = (Math.random() * 3 + 2) + "s";
-            flower.style.fontSize = (Math.random() * 20 + 20) + "px";
+noBtn.addEventListener("mouseenter", moveButton);
+noBtn.addEventListener("touchstart", moveButton);
 
-            document.body.appendChild(flower);
+/* Affettim */
+const yesBtn = document.getElementById("yesBtn");
+const success = document.getElementById("success");
 
-            setTimeout(() => {
-                flower.remove();
-            }, 5000);
-        }
-    });
+yesBtn.addEventListener("click",()=>{
+
+    success.style.display="block";
+
+    for(let i=0;i<60;i++){
+        createHeart();
+    }
+
+});
+
+/* Kalp efekti */
+function createHeart(){
+
+    const heart=document.createElement("div");
+
+    heart.classList.add("heart");
+    heart.innerHTML="❤️";
+
+    heart.style.left=Math.random()*window.innerWidth+"px";
+    heart.style.bottom="-50px";
+
+    heart.style.fontSize=
+    (20 + Math.random()*25)+"px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },4000);
+}
+
 </script>
 
 </body>
